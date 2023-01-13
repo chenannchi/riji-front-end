@@ -7,6 +7,7 @@
 ## Planning Materials
 
 ## Back-end Github Repository
+- [Back-end of Riji](https://github.com/chenannchi/riji-back-end/tree/main)
 
 ## Screenshots
 
