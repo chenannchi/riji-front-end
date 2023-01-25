@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react' 
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 
 // page components
@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import DiarybookList from './pages/DiarybookList/DiarybookList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -15,13 +16,24 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as diarybookService from './services/diarybookService'
 
 // styles
 import './App.css'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [diarybooks, setDiarybooks] = useState([])
+
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const fetchAllDiarybooks = async () => {
+      const data = await diarybookService.index()
+      setDiarybooks(data)
+    }
+    fetchAllDiarybooks()
+  }, [user])
 
   const handleLogout = () => {
     authService.logout()
@@ -59,6 +71,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/diarybooks"
+          element={
+            <ProtectedRoute user={user}>
+              <DiarybookList diarybooks={diarybooks} />
             </ProtectedRoute>
           }
         />
