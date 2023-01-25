@@ -1,5 +1,5 @@
 // npm modules
-import { useState, useEffect } from 'react' 
+import { useState, useEffect } from 'react'
 // import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
@@ -10,6 +10,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import DiarybookList from './pages/DiarybookList/DiarybookList'
+import DiarybookDetails from './pages/DiarybookDetails/DiarybookDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -80,6 +81,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <DiarybookList diarybooks={diarybooks} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/diarybooks/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <DiarybookDetails user={user} />
             </ProtectedRoute>
           }
         />
