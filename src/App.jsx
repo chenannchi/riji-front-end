@@ -47,6 +47,12 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+  const handleAddDiarybook = async (diarybookData) => {
+    const newDiarybook = await diarybookService.create(diarybookData)
+    setDiarybooks([newDiarybook, ...diarybooks])
+    navigate('/diarybooks')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
