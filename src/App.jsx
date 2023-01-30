@@ -54,6 +54,12 @@ const App = () => {
     navigate('/diarybooks')
   }
 
+  const handleUpdateDiarybook = async (diarybookData) => {
+    const updatedDiarybook = await diarybookService.update(diarybookData)
+    setDiarybooks(diarybooks.map((diarybook) => diarybookData._id === diarybook._id ? updatedDiarybook : diarybook))
+    navigate('/diarybooks')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />

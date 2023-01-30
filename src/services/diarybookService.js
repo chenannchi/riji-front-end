@@ -40,8 +40,25 @@ const create = async (diarybookData) => {
   }
 }
 
+const update = async (diarybookData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${diarybookData._id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(diarybookData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   show,
   create,
+  update,
 }
