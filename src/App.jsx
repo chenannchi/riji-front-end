@@ -11,6 +11,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import DiarybookList from './pages/DiarybookList/DiarybookList'
 import DiarybookDetails from './pages/DiarybookDetails/DiarybookDetails'
+import NewDiarybook from './pages/NewDiarybook/NewDiarybook'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -95,6 +96,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <DiarybookDetails user={user} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/diarybooks/new"
+          element={
+            <ProtectedRoute user={user}>
+              <NewDiarybook handleAddDiarybook={handleAddDiarybook} user={user} />
             </ProtectedRoute>
           }
         />
