@@ -13,6 +13,7 @@ import DiarybookList from './pages/DiarybookList/DiarybookList'
 import DiarybookDetails from './pages/DiarybookDetails/DiarybookDetails'
 import NewDiarybook from './pages/NewDiarybook/NewDiarybook'
 import EditDiarybook from './pages/EditDiarybook/EditDiarybook'
+import DiaryList from './pages/DiaryList/DiaryList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -21,6 +22,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 // services
 import * as authService from './services/authService'
 import * as diarybookService from './services/diarybookService'
+import * as diaryService from "./services/diaryService"
 
 // styles
 import './App.css'
@@ -28,6 +30,7 @@ import './App.css'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [diarybooks, setDiarybooks] = useState([])
+  const [diaries, setDiaries] = useState([])
 
   const navigate = useNavigate()
 
@@ -38,6 +41,15 @@ const App = () => {
     }
     fetchAllDiarybooks()
   }, [user])
+
+  useEffect(() => {
+    const fetchAllDiaries = async () => {
+      const data = await diaryService.index()
+      setDiaries(data)
+    }
+    fetchAllDiaries()
+  }, [user])
+
 
   const handleLogout = () => {
     authService.logout()
@@ -125,6 +137,14 @@ const App = () => {
             <EditDiarybook handleUpdateDiarybook={handleUpdateDiarybook} />
           </ProtectedRoute>
         } />
+        <Route
+          path="/diaries"
+          element={
+            <ProtectedRoute user={user}>
+              <DiaryList diaries={diaries} />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   )
