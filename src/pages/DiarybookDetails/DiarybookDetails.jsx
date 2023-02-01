@@ -37,7 +37,7 @@ const DiarybookDetails = (props) => {
           {diarybook.owner.filter(member => member._id === props.user.profile) &&
             <>
               <Link to={`/diarybooks/${id}/edit`} state={diarybook}>Edit</Link>
-              <button>Delete</button>
+              <button onClick={() => props.handleDeleteDiarybook(id)}>Delete</button>
             </>
           }
         </span>
