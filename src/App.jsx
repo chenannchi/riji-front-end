@@ -91,6 +91,12 @@ const App = () => {
     navigate('/diaries')
   }
 
+  const handleDeleteDiary = async (id) => {
+    const deletedDiary = await diaryService.deleteDiary(id)
+    setDiaries(diaries.filter(diary => diary._id !== deletedDiary._id))
+    navigate('/diaries')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -161,7 +167,7 @@ const App = () => {
           path="/diaries/:id"
           element={
             <ProtectedRoute user={user}>
-              <DiaryDetails user={user} />
+              <DiaryDetails user={user} handleDeleteDiary={handleDeleteDiary} />
             </ProtectedRoute>
           }
         />

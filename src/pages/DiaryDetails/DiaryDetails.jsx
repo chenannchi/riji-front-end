@@ -32,7 +32,7 @@ const DiaryDetails = (props) => {
           {diary.author._id === props.user.profile &&
             <>
               <Link to={`/diaries/${id}/edit`} state={diary}>Edit</Link>
-              {/* <button onClick={() => props.handleDeleteDiary(id)}>Delete</button> */}
+              <button onClick={() => props.handleDeleteDiary(id)}>Delete</button>
             </>
           }
         </span>
