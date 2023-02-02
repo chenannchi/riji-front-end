@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import styles from './DiaryDetails.module.css'
 import Loading from "../Loading/Loading"
 import { modifyMusicLink } from "../../modifyMusicLink"
@@ -22,11 +22,20 @@ const DiaryDetails = (props) => {
   // Verify state with a console.log or React Dev Tools:
   // console.log('Diary State:', diary)
   if (!diary) return <Loading />
+
   return (
     <main className={styles.container}>
       <article>
         <header>
           <h1>{diary.title}</h1>
+          <span>
+          {diary.author._id === props.user.profile &&
+            <>
+              <Link to={`/diaries/${id}/edit`} state={diary}>Edit</Link>
+              {/* <button onClick={() => props.handleDeleteDiary(id)}>Delete</button> */}
+            </>
+          }
+        </span>
         </header>
         <p>{diary.content}</p>
         <iframe src={modifyMusicLink(diary.music)} title={diary.title} width="420" height="315"></iframe>

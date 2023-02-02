@@ -41,8 +41,25 @@ const create = async (diaryData) => {
   }
 }
 
+const update = async (diaryData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${diaryData._id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(diaryData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   show,
   create,
+  update,
 }

@@ -31,9 +31,9 @@ const DiarybookDetails = (props) => {
       <header>
         <h1>{diarybook.name}</h1>
         <span>
-          {console.log("owner",diarybook.owner)}
+          {/* {console.log("owner",diarybook.owner)}
           {console.log("user", props.user.profile)}
-          {console.log(diarybook.owner.includes(props.user.profile))}
+          {console.log(diarybook.owner.includes(props.user.profile))} */}
           {diarybook.owner.filter(member => member._id === props.user.profile) &&
             <>
               <Link to={`/diarybooks/${id}/edit`} state={diarybook}>Edit</Link>
