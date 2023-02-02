@@ -14,6 +14,7 @@ import DiarybookDetails from './pages/DiarybookDetails/DiarybookDetails'
 import NewDiarybook from './pages/NewDiarybook/NewDiarybook'
 import EditDiarybook from './pages/EditDiarybook/EditDiarybook'
 import DiaryList from './pages/DiaryList/DiaryList'
+import DiaryDetails from './pages/DiaryDetails/DiaryDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -39,17 +40,14 @@ const App = () => {
       const data = await diarybookService.index()
       setDiarybooks(data)
     }
-    fetchAllDiarybooks()
-  }, [user])
-
-  useEffect(() => {
     const fetchAllDiaries = async () => {
       const data = await diaryService.index()
       setDiaries(data)
     }
+
+    fetchAllDiarybooks()
     fetchAllDiaries()
   }, [user])
-
 
   const handleLogout = () => {
     authService.logout()
@@ -142,6 +140,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <DiaryList diaries={diaries} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/diaries/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <DiaryDetails user={user} />
             </ProtectedRoute>
           }
         />
