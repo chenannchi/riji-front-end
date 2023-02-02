@@ -15,6 +15,7 @@ import NewDiarybook from './pages/NewDiarybook/NewDiarybook'
 import EditDiarybook from './pages/EditDiarybook/EditDiarybook'
 import DiaryList from './pages/DiaryList/DiaryList'
 import DiaryDetails from './pages/DiaryDetails/DiaryDetails'
+import NewDiary from './pages/NewDiary/NewDiary'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -75,6 +76,12 @@ const App = () => {
     const deletedDiarybook = await diarybookService.deleteDiarybook(id)
     setDiarybooks(diarybooks.filter(diarybook => diarybook._id !== deletedDiarybook._id))
     navigate('/diarybooks')
+  }
+
+  const handleAddDiary = async (diaryData) => {
+    const newDiary = await diaryService.create(diaryData)
+    setDiaries([newDiary, ...diaries])
+    navigate('/diaries')
   }
 
   return (
@@ -151,6 +158,11 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path="/diaries/new" element={
+          <ProtectedRoute user={user}>
+            <NewDiary handleAddDiary={handleAddDiary} />
+          </ProtectedRoute>
+        } />
       </Routes>
     </>
   )
