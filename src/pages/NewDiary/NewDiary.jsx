@@ -41,14 +41,14 @@ const NewDiary = (props) => {
           onChange={handleChange}
         />
         <label htmlFor="music-input">Music</label>
-        <textarea
+        <input
           required
           name="music"
           id="music-input"
           value={form.music}
           onChange={handleChange}
         >
-        </textarea>
+        </input>
         <button type="submit">SUBMIT</button>
       </form>
     </main>

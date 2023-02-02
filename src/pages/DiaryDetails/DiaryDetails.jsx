@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import styles from './DiaryDetails.module.css'
 import Loading from "../Loading/Loading"
+import { modifyMusicLink } from "../../modifyMusicLink"
 
 // Services
 import * as diaryService from '../../services/diaryService'
@@ -28,7 +29,7 @@ const DiaryDetails = (props) => {
           <h1>{diary.title}</h1>
         </header>
         <p>{diary.content}</p>
-        {/* <iframe src={diary.music} title={diary.title} width="420" height="315"></iframe> */}
+        <iframe src={modifyMusicLink(diary.music)} title={diary.title} width="420" height="315"></iframe>
       </article>
     </main>
   )
