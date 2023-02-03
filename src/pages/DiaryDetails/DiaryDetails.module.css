@@ -84,3 +84,22 @@
 .container > section article p {
   text-indent: 0px;
 }
+
+.container select, .container option{
+  color:black;
+}
+
+#shareBlock{
+  color: black;
+  border: 2px black solid;
+}
+
+#shareBlock *{
+  color: black;
+  border: 2px black solid;
+}
+
+#shareBlock option{
+  color: black;
+  border: 2px black solid;
+}

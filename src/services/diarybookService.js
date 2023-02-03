@@ -70,10 +70,41 @@ const deleteDiarybook = async (id) => {
   }
 }
 
+const addDiaryToDiarybook = async (id, diaryId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}/diaries/${diaryId}`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const deleteDiaryFromDiarybook = async (id, diaryId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}/diaries/${diaryId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   show,
   create,
   update,
   deleteDiarybook,
+  addDiaryToDiarybook,
+  deleteDiaryFromDiarybook
 }

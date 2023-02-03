@@ -97,6 +97,19 @@ const App = () => {
     navigate('/diaries')
   }
 
+  const handleAddDiaryToDiarybook = async (id, diaryId) => {
+    const updatedDiarybook = await diarybookService.addDiaryToDiarybook(id, diaryId)
+    setDiarybooks(diarybooks.map((diarybook) => id === diarybook._id ? updatedDiarybook : diarybook))
+    navigate(`/diarybooks/${id}`)
+  }
+
+  const handleDeleteDiaryFromDiarybook = async (id, diaryId) => {
+    const updatedDiarybook = await diarybookService.deleteDiaryFromDiarybook(id, diaryId)
+    setDiarybooks(diarybooks.filter(diarybook => diarybook._id !== updatedDiarybook._id))
+    navigate('/diarybooks')
+  }
+
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -167,7 +180,7 @@ const App = () => {
           path="/diaries/:id"
           element={
             <ProtectedRoute user={user}>
-              <DiaryDetails user={user} handleDeleteDiary={handleDeleteDiary} />
+              <DiaryDetails user={user} handleDeleteDiary={handleDeleteDiary} diarybooks={diarybooks} handleAddDiaryToDiarybook={handleAddDiaryToDiarybook} handleDeleteDiaryFromDiarybook={handleDeleteDiaryFromDiarybook} />
             </ProtectedRoute>
           }
         />

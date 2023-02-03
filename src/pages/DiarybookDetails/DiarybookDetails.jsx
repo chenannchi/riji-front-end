@@ -21,7 +21,7 @@ const DiarybookDetails = (props) => {
   }, [id])
 
   // Verify state with a console.log or React Dev Tools:
-  console.log('Diarybook State:', diarybook)
+  // console.log('Diarybook State:', diarybook)
 
   if (!diarybook) return <Loading />
 
