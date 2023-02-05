@@ -26,6 +26,11 @@ const Landing = ({ user }) => {
           </Link>
         </div>
       </section>
+      <footer className={styles.footer} >
+        <div>
+          © 2023 Riji, Inc.
+        </div>
+      </footer>
     </main>
   )
 }
