@@ -12,6 +12,12 @@ const DiaryDetails = (props) => {
   const [diary, setDiary] = useState(null)
   const [diarybookId, setDiarybookId] = useState(null)
 
+  // function inDiarybook(diary) {
+  //   if (friend.recipient === props.profile._id && friend.status === 'requested') {
+  //     return true
+  //   }
+  // }
+
   useEffect(() => {
     const fetchDiary = async () => {
       const data = await diaryService.show(id)
@@ -21,14 +27,11 @@ const DiaryDetails = (props) => {
   }, [id])
 
   const handleChange = (e) => {
-    // console.log(e)
-    // console.log(e.target.value)
     setDiarybookId(e.target.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // console.log(e.target.value)
     props.handleAddDiaryToDiarybook(diarybookId, id)
   }
 
@@ -50,10 +53,13 @@ const DiaryDetails = (props) => {
                     <h3>Share Your Diary</h3>
                     <form id={styles.add_diary_to_diarybook} onSubmit={handleSubmit}>
                       <select name="diarybook_id" id="diarybook-input" onChange={handleChange}>
-                      <option value="none">Select an Option</option>
-                        {props.diarybooks.map((diarybook) => (
-                          <option value={diarybook._id} key={diarybook._id}>{diarybook.name}</option>
-                        ))}
+                        <option value="none">Select an Option</option>
+                        {props.diarybooks.map(
+                          diarybook => (
+                            diarybook.diaries.some(diary => diary === id)?console.log(diary, diary._id, "yaaa"):<option value={diarybook._id} key={diarybook._id}>{diarybook.name}</option>
+
+                          )
+                        )}
                       </select>
                       <button type="submit">Share</button>
                     </form>

@@ -106,7 +106,7 @@ const App = () => {
   const handleDeleteDiaryFromDiarybook = async (id, diaryId) => {
     const updatedDiarybook = await diarybookService.deleteDiaryFromDiarybook(id, diaryId)
     setDiarybooks(diarybooks.filter(diarybook => diarybook._id !== updatedDiarybook._id))
-    navigate('/diarybooks')
+    navigate(`/diarybooks/${id}`)
   }
 
 
