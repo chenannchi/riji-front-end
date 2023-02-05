@@ -56,7 +56,7 @@ const DiaryDetails = (props) => {
                         <option value="none">Select an Option</option>
                         {props.diarybooks.map(
                           diarybook => (
-                            diarybook.diaries.some(diary => diary === id)?console.log(diary, diary._id, "yaaa"):<option value={diarybook._id} key={diarybook._id}>{diarybook.name}</option>
+                            diarybook.diaries.some(diary => diary === id)?null:<option value={diarybook._id} key={diarybook._id}>{diarybook.name}</option>
 
                           )
                         )}

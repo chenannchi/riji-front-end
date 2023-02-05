@@ -100,7 +100,7 @@ const App = () => {
   const handleAddDiaryToDiarybook = async (id, diaryId) => {
     const updatedDiarybook = await diarybookService.addDiaryToDiarybook(id, diaryId)
     setDiarybooks(diarybooks.map((diarybook) => id === diarybook._id ? updatedDiarybook : diarybook))
-    navigate(`/diarybooks/${id}`)
+    navigate(`/diaries/${diaryId}`)
   }
 
   const handleDeleteDiaryFromDiarybook = async (id, diaryId) => {
