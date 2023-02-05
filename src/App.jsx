@@ -34,6 +34,7 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [diarybooks, setDiarybooks] = useState([])
   const [diaries, setDiaries] = useState([])
+  const [seen, setSeen] = useState(false)
 
   const navigate = useNavigate()
 
@@ -55,6 +56,10 @@ const App = () => {
     authService.logout()
     setUser(null)
     navigate('/')
+  }
+
+  const togglePop = () => {
+    setSeen(!seen)
   }
 
   const handleSignupOrLogin = () => {
@@ -180,7 +185,7 @@ const App = () => {
           path="/diaries/:id"
           element={
             <ProtectedRoute user={user}>
-              <DiaryDetails user={user} handleDeleteDiary={handleDeleteDiary} diarybooks={diarybooks} handleAddDiaryToDiarybook={handleAddDiaryToDiarybook} handleDeleteDiaryFromDiarybook={handleDeleteDiaryFromDiarybook} />
+              <DiaryDetails user={user} handleDeleteDiary={handleDeleteDiary} diarybooks={diarybooks} handleAddDiaryToDiarybook={handleAddDiaryToDiarybook} handleDeleteDiaryFromDiarybook={handleDeleteDiaryFromDiarybook} togglePop={togglePop} seen={seen} />
             </ProtectedRoute>
           }
         />
