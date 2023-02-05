@@ -58,7 +58,7 @@ const DiaryDetails = (props) => {
                       <div className="modal">
                         <div className="modal_content">
                           <span className="close" onClick={handleClick}>X</span>
-                          <h3>Share Your Diary</h3>
+                          <div>Share Your Diary</div>
                           <form id={styles.add_diary_to_diarybook} onSubmit={handleSubmit}>
                             <select name="diarybook_id" id="diarybook-input" onChange={handleChange}>
                               <option value="none">Select an Option</option>
