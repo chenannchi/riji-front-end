@@ -25,11 +25,11 @@ const NavBar = ({ user, handleLogout, closeMobileMenu, isMobile }) => {
         <ul>
           <Link to="/"><li>Home</li></Link>
           <Link to="/profiles"><li>Profiles</li></Link>
-          <Link to="/diarybooks"><li>DIARYBOOKS</li></Link>
-          <Link to="/diarybooks/new"><li>NEW DIARYBOOK</li></Link>
-          <Link to="/diaries"><li>DIARIES</li></Link>
-          <Link to="/diaries/new"><li>NEW DIARY</li></Link>
-          <Link to="" onClick={handleLogout}><li>LOG OUT</li></Link>
+          <Link to="/diarybooks"><li>Diarybooks</li></Link>
+          <Link to="/diarybooks/new"><li>New Diarybook</li></Link>
+          <Link to="/diaries"><li>Diaries</li></Link>
+          <Link to="/diaries/new"><li>New Diary</li></Link>
+          <Link to="" onClick={handleLogout}><li>Log Out</li></Link>
           <Link to="/changePassword"><li>Change Password</li></Link>
         </ul>
       :
