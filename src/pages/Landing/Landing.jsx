@@ -11,7 +11,7 @@ const Landing = ({ user }) => {
       </section>
       <section id={styles.second}>
         <div className={styles.title}>About</div>
-        <p>Let me introduce Riji with you! <br/><br/>Riji is a website that can let you write your diaries and share them with your love ones! Sounds great right? Let's share our daily life with our friends, our family, and anyone who we want to share your stories with! The last but not the least, do you know what Riji stands for? It's actually the pronounce of diary in Mandarin. Sounds cool right? Let's begin our diary sharing journey!</p>
+        <p>Riji is a website that can let you write your diaries and share them with your love ones! Sounds great right? Let's share our daily life with our friends, our family, and whoever we want to share our stories with! The last but not the least, do you know what Riji stands for? It's actually the pronounce of "Diary" in Mandarin. Sounds cool right? Let's begin our diary sharing journey!</p>
       </section>
       <section id={styles.third}>
         <div className={styles.hint}>
