@@ -3,27 +3,29 @@ ul {
   align-items: center;
   font-size: 100%;
   font-weight: bold;
-  z-index: 2;
-  margin-top: 40px;
+  z-index: 3;
+  margin-top: 55px;
   right: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(172, 112, 136, 0.75);
+  background-color: rgba(194, 151, 86, 0.75);
   padding: 0;
 }
 
 .navbar {
-  background-color: #ac7088;
+  background-color: rgb(194, 151, 86);
   height: 6vh;
-  z-index: 3;
+  z-index: 2;
   width: 100%;
 }
 
 .navbar a {
   text-decoration: none;
-  color: white;
-  font-size: 80%;
+  color: rgb(245, 236, 220);
+  text-shadow: black 2px 2px;
+  font-size: 95%;
   align-items: center;
+  font-weight: bolder;
 }
 
 .navbar .mobileNavigation {
@@ -58,11 +60,11 @@ ul {
     align-items: center;
     text-align: center;
     height: 50px;
-    border-top: 1px solid #ac7088;
+    border-top: 1px solid rgb(197, 144, 64);
   }
 
   ul li:hover {
-    background-color: #ac7088;
+    background-color: rgb(190, 140, 64);
     color: white;
   }
 

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import styles from "./NavBar.module.css"
 
 const NavBar = ({ user, handleLogout, closeMobileMenu, isMobile }) => {
 
@@ -9,18 +8,18 @@ const NavBar = ({ user, handleLogout, closeMobileMenu, isMobile }) => {
   }
 
   return (
-    <nav>
+    <>
       {user
         ?  isMobile ?
         <ul>
           <Link to="/" onClick={() => isMobile && closeMobileMenu()}><li>Home</li></Link>
           <Link to="/profiles" onClick={() => isMobile && closeMobileMenu()}><li>Profiles</li></Link>
-          <Link to="/diarybooks" onClick={() => isMobile && closeMobileMenu()}><li>DIARYBOOKS</li></Link>
-          <Link to="/diarybooks/new" onClick={() => isMobile && closeMobileMenu()}><li>NEW DIARYBOOK</li></Link>
-          <Link to="/diaries" onClick={() => isMobile && closeMobileMenu()}><li>DIARIES</li></Link>
-          <Link to="/diaries/new" onClick={() => isMobile && closeMobileMenu()}><li>NEW DIARY</li></Link>
-          <Link to="" onClick={()=>logOut()}><li>LOG OUT</li></Link>
-          <Link to="/changePassword"><li>Change Password</li></Link>
+          <Link to="/diarybooks" onClick={() => isMobile && closeMobileMenu()}><li>Diarybooks</li></Link>
+          <Link to="/diarybooks/new" onClick={() => isMobile && closeMobileMenu()}><li>New Diarybook</li></Link>
+          <Link to="/diaries" onClick={() => isMobile && closeMobileMenu()}><li>Diaries</li></Link>
+          <Link to="/diaries/new" onClick={() => isMobile && closeMobileMenu()}><li>New Diary</li></Link>
+          <Link to="" onClick={()=>logOut()}><li>Log Out</li></Link>
+          <Link to="/changePassword" onClick={() => isMobile && closeMobileMenu()}><li>Change Password</li></Link>
         </ul>
         :
         <ul>
@@ -39,7 +38,7 @@ const NavBar = ({ user, handleLogout, closeMobileMenu, isMobile }) => {
           <Link to="/signup" onClick={() => isMobile && closeMobileMenu()}><li>Sign Up</li></Link>
         </ul>
       }
-    </nav>
+    </>
   )
 }
 
