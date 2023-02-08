@@ -17,7 +17,7 @@ import DiaryList from './pages/DiaryList/DiaryList'
 import DiaryDetails from './pages/DiaryDetails/DiaryDetails'
 import NewDiary from './pages/NewDiary/NewDiary'
 import EditDiary from './pages/EditDiary/EditDiary'
-
+import Loading from './pages/Loading/Loading'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
@@ -119,6 +119,7 @@ const App = () => {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
+        <Route path="/loading" element={<Loading/>}></Route>
         <Route path="/" element={<Landing user={user} />} />
         <Route
           path="/signup"

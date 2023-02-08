@@ -27,6 +27,7 @@
 
 ## Credits
 - [Unsplash](https://unsplash.com/)
+- [Canva](https://www.canva.com/)
 - 
 
 
