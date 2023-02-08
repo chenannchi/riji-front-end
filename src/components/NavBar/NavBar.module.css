@@ -95,7 +95,10 @@ ul {
 
   ul li:hover {
     font-weight: bolder;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
+    background-color: white;
+    color:brown;
+    text-shadow: none;
   }
 
   .navbar {

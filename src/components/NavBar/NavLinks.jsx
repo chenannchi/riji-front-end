@@ -12,7 +12,8 @@ const NavBar = ({ user, handleLogout, closeMobileMenu, isMobile }) => {
       {user
         ?  isMobile ?
         <ul>
-          <Link to="/" onClick={() => isMobile && closeMobileMenu()}><li>Home</li></Link>
+          <Link to="/" onClick={() => isMobile && closeMobileMenu()}><li 
+          >Home</li></Link>
           <Link to="/profiles" onClick={() => isMobile && closeMobileMenu()}><li>Profiles</li></Link>
           <Link to="/diarybooks" onClick={() => isMobile && closeMobileMenu()}><li>Diarybooks</li></Link>
           <Link to="/diarybooks/new" onClick={() => isMobile && closeMobileMenu()}><li>New Diarybook</li></Link>
