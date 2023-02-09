@@ -7,12 +7,16 @@ import styles from './DiarybookCard.module.css'
 const DiarybookCard = ({ diarybook }) => {
   return (
     <Link to={`/diarybooks/${diarybook._id}`}>
-      <article className={styles.container}>
-        <header>
-          <h1>{diarybook.name}</h1>
-        </header>
-        <p>{diarybook.description}</p>
-      </article>
+      <div className={styles.flip_card}>
+        <div className={styles.flip_card_inner}>
+          <div className={styles.flip_card_front}>
+            <h1>{diarybook.name}</h1>
+          </div>
+          <div className={styles.flip_card_back}>
+            <p>{diarybook.description}</p>
+          </div>
+        </div>
+      </div>
     </Link>
   )
 }
