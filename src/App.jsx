@@ -48,8 +48,11 @@ const App = () => {
       setDiaries(data)
     }
 
-    fetchAllDiarybooks()
-    fetchAllDiaries()
+    if (user) {
+      fetchAllDiarybooks()
+      fetchAllDiaries()
+    }
+    
   }, [user])
 
   const handleLogout = () => {
@@ -119,8 +122,8 @@ const App = () => {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/loading" element={<Loading/>}></Route>
         <Route path="/" element={<Landing user={user} />} />
+        <Route path="/loading" element={<Loading/>}></Route>
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
