@@ -1,5 +1,6 @@
 import styles from './Landing.module.css'
 import { Link } from 'react-router-dom'
+import Footer from "../../components/Footer/Footer"
 
 const Landing = ({ user }) => {
   return (
@@ -17,20 +18,23 @@ const Landing = ({ user }) => {
         <div className={styles.hint}>
           Start your journey!
         </div>
-        <div className={styles.btns}>
-          <Link to={`diaries/new`}>
-            <button>Add a Diary</button>
-          </Link>
-          <Link to={`diarybooks/new`}>
-            <button>Add a Diarybook</button>
-          </Link>
-        </div>
+        {
+          user?
+          <div className={styles.btns}>
+            <Link to={`diaries/new`}>
+              <button>Add a Diary</button>
+            </Link>
+            <Link to={`diarybooks/new`}>
+              <button>Add a Diarybook</button>
+            </Link>
+          </div>
+          :
+          <div>
+            <button>Create Account &nbsp; &#62;</button>
+          </div>
+        }
       </section>
-      <footer className={styles.footer} >
-        <div>
-          © 2023 Riji, Inc.
-        </div>
-      </footer>
+      <Footer/>
     </main>
   )
 }

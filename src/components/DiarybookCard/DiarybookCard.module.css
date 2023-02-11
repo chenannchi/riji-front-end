@@ -1,7 +1,7 @@
 .flip_card {
   padding: 14px 21px;
   border-radius: 5px;
-  width: 190px;
+  width: 200px;
   height: 254px;
   /* perspective: 1000px; */
   /* font-family: sans-serif; */
@@ -54,19 +54,19 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border: 1px solid coral;
+  border: 1px solid beige;
   border-radius: 1rem;
 }
 
 .flip_card_front {
-  background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%,
-      rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
-  color: coral;
+  background: linear-gradient(120deg, beige 60%, rgb(255, 231, 222) 88%,
+      rgb(255, 211, 195) 40%, burlywood 48%);
+  color: burlywood;
 }
 
 .flip_card_back {
-  background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
-      bisque 40%, rgb(255, 185, 160) 78%);
-  color: white;
+  background: linear-gradient(120deg, burlywood 30%, beige 88%,
+      bisque 40%, beige 78%);
+  color: black;
   transform: rotateY(180deg);
 }

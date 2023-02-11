@@ -19,7 +19,7 @@ const NavBar = ({ user, handleLogout, closeMobileMenu, isMobile }) => {
           <Link to="/diarybooks/new" onClick={() => isMobile && closeMobileMenu()}><li>New Diarybook</li></Link>
           <Link to="/diaries" onClick={() => isMobile && closeMobileMenu()}><li>Diaries</li></Link>
           <Link to="/diaries/new" onClick={() => isMobile && closeMobileMenu()}><li>New Diary</li></Link>
-          <Link to="" onClick={()=>logOut()}><li>Log Out</li></Link>
+          <Link to="/" onClick={()=>logOut()}><li>Log Out</li></Link>
           <Link to="/changePassword" onClick={() => isMobile && closeMobileMenu()}><li>Change Password</li></Link>
         </ul>
         :
@@ -30,11 +30,12 @@ const NavBar = ({ user, handleLogout, closeMobileMenu, isMobile }) => {
           <Link to="/diarybooks/new"><li>New Diarybook</li></Link>
           <Link to="/diaries"><li>Diaries</li></Link>
           <Link to="/diaries/new"><li>New Diary</li></Link>
-          <Link to="" onClick={handleLogout}><li>Log Out</li></Link>
+          <Link to="/" onClick={handleLogout}><li>Log Out</li></Link>
           <Link to="/changePassword"><li>Change Password</li></Link>
         </ul>
       :
         <ul>
+          <Link to="/"><li>Home</li></Link>
           <Link to="/login" onClick={() => isMobile && closeMobileMenu()}><li>Log In</li></Link>
           <Link to="/signup" onClick={() => isMobile && closeMobileMenu()}><li>Sign Up</li></Link>
         </ul>
