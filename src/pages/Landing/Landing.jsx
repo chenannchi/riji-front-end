@@ -29,8 +29,13 @@ const Landing = ({ user }) => {
             </Link>
           </div>
           :
-          <div>
-            <button>Create Account &nbsp; &#62;</button>
+          <div className={styles.btns}>
+            <Link to="signup">
+              <button>Create Account</button>
+            </Link>
+            <Link to="login">
+              <button>Log In</button>
+            </Link>
           </div>
         }
       </section>
