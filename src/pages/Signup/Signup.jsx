@@ -13,7 +13,18 @@ const Signup = props => {
     <main className={styles.container}>
       {/* <p>{message}</p> */}
       {/* <SignupForm {...props} updateMessage={updateMessage} /> */}
-      <SignupForm {...props}  />
+      <div id={styles.inner}>
+        <div id={styles.imgContainer} >
+          <div id={styles.top_img}>
+            <img src='Images/friend4.jpg' alt="signup" id={styles.signup_image} />
+          </div>
+          <div id={styles.rect} />
+          <div id={styles.bottom_img}>
+            <img src="Images/diarybook.jpg" alt="signup" id={styles.signup_image2} />
+          </div>
+        </div>
+        <SignupForm {...props} />
+      </div>
     </main>
   )
 }
