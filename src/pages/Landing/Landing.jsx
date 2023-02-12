@@ -2,6 +2,7 @@ import styles from './Landing.module.css'
 import { Link } from 'react-router-dom'
 import Footer from "../../components/Footer/Footer"
 
+
 const Landing = ({ user }) => {
   return (
     <main className={styles.container}>
@@ -15,6 +16,7 @@ const Landing = ({ user }) => {
         <p>Riji is a website that can let you write your diaries and share them with your love ones! Sounds great right? Let's share our daily life with our friends, our family, and whoever we want to share our stories with! The last but not the least, do you know what Riji stands for? It's actually the pronounce of "Diary" in Mandarin. Sounds cool right? Let's begin our diary sharing journey!</p>
       </section>
       <section id={styles.third}>
+        {/* <img src='Images/woman.svg' alt="woman_avatar" className={styles.avatar} /> */}
         <div className={styles.hint}>
           Start your journey!
         </div>

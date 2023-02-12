@@ -32,6 +32,10 @@
   margin: 30px;
 }
 
+/* .avatar{
+  width: 100px;
+} */
+
 #first{
   background-image: url("../../../public/notebook1.jpg");
   width: 100%;
