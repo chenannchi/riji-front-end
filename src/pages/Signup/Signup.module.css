@@ -1,5 +1,8 @@
 .container {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: antiquewhite;
+  min-height: 92vh;
 }

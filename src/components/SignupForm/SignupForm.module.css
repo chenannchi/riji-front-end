@@ -3,7 +3,10 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  /* border:black 2px solid; */
+  height: 100%;
+  margin: 0 0 0 20px;
+  width: 60%;
 }
 
 .label,
@@ -13,4 +16,60 @@
 
 .inputContainer {
   margin-bottom: 1rem;
+}
+
+
+#inner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  /* border: 2px solid black; */
+  height: 70vh;
+  background-color: rgb(253, 252, 252);
+  box-shadow: 0 0 10px 0px rgba(0,0,0,.5);
+  padding: 50px;
+}
+
+#imgContainer{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border: 10px burlywood solid; */
+}
+
+
+#top_img{
+  float: left;
+  width:90%;
+  /* margin-left: -10%; */
+  position: relative;
+  z-index: 2;
+}
+
+#bottom_img{
+  float: right;
+  width: 65%;
+  margin-right: -70%;
+  margin-top: -35%;
+  z-index:3;
+}
+
+#rect{
+  border:10px solid burlywood;
+  display: float;
+  z-index:1;
+  width: 70%;
+  height: 250px;
+  margin-top: -60%;
+}
+
+#signup_image{
+  width: 70%;
+}
+
+#signup_image2{
+  width: 80%;
 }

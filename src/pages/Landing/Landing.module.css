@@ -36,6 +36,19 @@
   width: 100px;
 } */
 
+.btns a{
+  text-decoration: none;
+}
+
+/* .button{
+  size:large;
+  background-color:purple;
+} */
+
+.button:hover{
+  background-color: palevioletred;
+}
+
 #first{
   background-image: url("../../../public/notebook1.jpg");
   width: 100%;

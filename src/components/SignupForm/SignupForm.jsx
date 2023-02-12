@@ -43,77 +43,89 @@ const SignupForm = props => {
   }
 
   return (
-    <form
-      autoComplete="off"
-      onSubmit={handleSubmit}
-      className={styles.container}
-    >
-      <div className={styles.inputContainer}>
-        <label htmlFor="name" className={styles.label}>Name</label>
-        <input
-          type="text"
-          autoComplete="off"
-          id="name"
-          value={name}
-          name="name"
-          onChange={handleChange}
-        />
+    <div id={styles.inner}>
+      <div id={styles.imgContainer} >
+        <div id={styles.top_img}>
+          <img src='Images/friend4.jpg' alt="signup" id={styles.signup_image}/>
+        </div>
+        <div id={styles.rect} />
+        <div id={styles.bottom_img}>
+          <img src="Images/diarybook.jpg" alt="signup" id={styles.signup_image2} />
+        </div>
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="email" className={styles.label}>Email</label>
-        <input
-          type="text"
-          autoComplete="off"
-          id="email"
-          value={email}
-          name="email"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>Password</label>
-        <input
-          type="password"
-          autoComplete="off"
-          id="password"
-          value={password}
-          name="password"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="confirm" className={styles.label}>
-          Confirm Password
-        </label>
-        <input
-          type="password"
-          autoComplete="off"
-          id="confirm"
-          value={passwordConf}
-          name="passwordConf"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="photo-upload" className={styles.label}>
-          Upload Photo
-        </label>
-        <input
-          type="file"
-          id="photo-upload"
-          name="photo"
-          onChange={handleChangePhoto}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <button disabled={isFormInvalid()} className={styles.button}>
-          Sign Up
-        </button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
-      </div>
-    </form>
+      <form
+        autoComplete="off"
+        onSubmit={handleSubmit}
+        className={styles.container}
+      >
+        <h1>Sign Up</h1>
+        <div className={styles.inputContainer}>
+          <label htmlFor="name" className={styles.label}>Name</label>
+          <input
+            type="text"
+            autoComplete="off"
+            id="name"
+            value={name}
+            name="name"
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="email" className={styles.label}>Email</label>
+          <input
+            type="text"
+            autoComplete="off"
+            id="email"
+            value={email}
+            name="email"
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="password" className={styles.label}>Password</label>
+          <input
+            type="password"
+            autoComplete="off"
+            id="password"
+            value={password}
+            name="password"
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="confirm" className={styles.label}>
+            Confirm Password
+          </label>
+          <input
+            type="password"
+            autoComplete="off"
+            id="confirm"
+            value={passwordConf}
+            name="passwordConf"
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="photo-upload" className={styles.label}>
+            Upload Photo
+          </label>
+          <input
+            type="file"
+            id="photo-upload"
+            name="photo"
+            onChange={handleChangePhoto}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <button disabled={isFormInvalid()} className={styles.button}>
+            Sign Up
+          </button>
+          <Link to="/">
+            <button>Cancel</button>
+          </Link>
+        </div>
+      </form>
+    </div>
   )
 }
 

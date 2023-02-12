@@ -1,7 +1,7 @@
 import styles from './Landing.module.css'
 import { Link } from 'react-router-dom'
 import Footer from "../../components/Footer/Footer"
-
+import Button from '@mui/material/Button';
 
 const Landing = ({ user }) => {
   return (
@@ -24,19 +24,23 @@ const Landing = ({ user }) => {
           user?
           <div className={styles.btns}>
             <Link to={`diaries/new`}>
-              <button>Add a Diary</button>
+              {/* <button>Add a Diary</button> */}
+              <Button variant="contained" className={styles.button}>Add a Diary</Button>
             </Link>
             <Link to={`diarybooks/new`}>
-              <button>Add a Diarybook</button>
+              {/* <button>Add a Diarybook</button> */}
+              <Button variant="contained" className={styles.button}>Add a Diarybook</Button>
             </Link>
           </div>
           :
           <div className={styles.btns}>
             <Link to="signup">
-              <button>Create Account</button>
+              {/* <button>Create Account</button> */}
+              <Button variant="contained" className={styles.button}>Create Account</Button>
             </Link>
             <Link to="login">
-              <button>Log In</button>
+              {/* <button>Log In</button> */}
+              <Button variant="contained" className={styles.button}>Log In</Button>
             </Link>
           </div>
         }
