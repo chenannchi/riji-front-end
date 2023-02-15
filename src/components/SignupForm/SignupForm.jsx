@@ -13,8 +13,14 @@ const SignupForm = props => {
   })
   const [photoData, setPhotoData] = useState({})
 
+  const [message, setMessage] = useState([''])
+
+  const updateMessage = msg => {
+    setMessage(msg)
+  }
+
   const handleChange = e => {
-    props.updateMessage('')
+    updateMessage('')
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -32,7 +38,7 @@ const SignupForm = props => {
       props.handleSignupOrLogin()
       navigate('/')
     } catch (err) {
-      props.updateMessage(err.message)
+      updateMessage(err.message)
     }
   }
 
@@ -49,6 +55,7 @@ const SignupForm = props => {
       className={styles.container}
     >
       <h1>Sign Up</h1>
+      <p>{message}</p>
       <div className={styles.inputContainer}>
         <label htmlFor="name" className={styles.label}>Name</label>
         <input

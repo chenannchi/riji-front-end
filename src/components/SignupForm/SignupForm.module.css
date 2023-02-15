@@ -16,6 +16,20 @@
 
 .inputContainer {
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items:center;
 }
 
+form {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(2, minmax(auto, 150px));
+  text-align: center;
+}
 
+form * {
+  border-radius: 5px;
+  width: 100%;
+  color: black;
+}
