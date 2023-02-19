@@ -7,9 +7,8 @@ const Signup = props => {
 
   return (
     <main className={styles.container}>
-      
       <div id={styles.inner}>
-        <div id={styles.imgContainer} >
+        {/* <div id={styles.imgContainer} >
           <div id={styles.top_img}>
             <img src='Images/friend4.jpg' alt="signup" id={styles.signup_image} />
           </div>
@@ -17,9 +16,8 @@ const Signup = props => {
           <div id={styles.bottom_img}>
             <img src="Images/diarybook.jpg" alt="signup" id={styles.signup_image2} />
           </div>
-        </div>
+        </div> */}
         <div>
-          
           <SignupForm {...props}/>
         </div>
       </div>

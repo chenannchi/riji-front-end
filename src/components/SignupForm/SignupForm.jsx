@@ -113,7 +113,7 @@ const SignupForm = props => {
           onChange={handleChangePhoto}
         />
       </div>
-      <div className={styles.inputContainer}>
+      <div className={styles.btns_container}>
         <button disabled={isFormInvalid()} className={styles.button}>
           Sign Up
         </button>

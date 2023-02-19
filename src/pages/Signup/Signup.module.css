@@ -1,31 +1,36 @@
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   background-color: antiquewhite;
-  min-height: 92vh;
+  min-height: 94vh;
 }
 
 #inner{
+  margin: 32px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70vw;
+  width: 40vw;
   /* border: 2px solid black; */
-  height: 70vh;
+  min-height: 70vh;
   background-color: rgb(253, 252, 252);
   box-shadow: 0 0 10px 0px rgba(0,0,0,.5);
   padding: 10px;
 }
 
+#inner > div{
+  width: 100%;
+}
+
 #imgContainer{
   width: 40%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* border: 10px burlywood solid; */
 }
 
 

@@ -1,7 +1,69 @@
-
-
 .container {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  background-color: antiquewhite;
+  min-height: 94vh;
+}
+
+#inner{
+  margin: 32px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40vw;
+  /* border: 2px solid black; */
+  min-height: 70vh;
+  background-color: rgb(253, 252, 252);
+  box-shadow: 0 0 10px 0px rgba(0,0,0,.5);
+  padding: 10px;
+}
+
+#inner > div{
+  width: 100%;
+}
+
+#imgContainer{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+#top_img{
+  float: left;
+  width:90%;
+  /* margin-left: -10%; */
+  position: relative;
+  z-index: 2;
+}
+
+#bottom_img{
+  float: right;
+  width: 65%;
+  margin-right: -70%;
+  margin-top: -35%;
+  z-index:3;
+}
+
+#rect{
+  border:10px solid burlywood;
+  display: float;
+  z-index:1;
+  width: 70%;
+  height: 250px;
+  margin-top: -60%;
+}
+
+#signup_image{
+  width: 70%;
+}
+
+#signup_image2{
+  width: 80%;
 }
