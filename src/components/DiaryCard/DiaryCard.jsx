@@ -3,12 +3,13 @@ import styles from './DiaryCard.module.css'
 const DiaryCard = ({ diary }) => {
   return (
     <Link to={`/diaries/${diary._id}`}>
-      <article className={styles.container}>
-        <header>
-          <h1>{diary.title}</h1>
-        </header>
-        <p>{diary.content}</p>
-      </article>
+      <div className={styles.container}>
+        <div className={styles.diary_preview}>
+          <div>{diary.title}</div>
+          {/* <p>{diary.content}</p> */}
+          <div>{diary.createdAt.slice(0,10)}</div>
+        </div>
+      </div>
     </Link>
   )
 }

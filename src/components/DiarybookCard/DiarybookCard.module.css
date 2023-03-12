@@ -3,8 +3,6 @@
   border-radius: 5px;
   width: 200px;
   height: 254px;
-  /* perspective: 1000px; */
-  /* font-family: sans-serif; */
 }
 
 .flip_card h1 {
@@ -21,12 +19,9 @@
   font-weight: 400;
   overflow: hidden;
   line-height: 1.5rem;
-  /* display: -webkit-box; */
-  /* -webkit-line-clamp: 3; */
   word-break: break-all;
   text-align-last: center;
   text-overflow: ellipsis;
-  /* -webkit-box-orient: vertical; */
   padding: 15px;
 }
 
