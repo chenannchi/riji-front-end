@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import styles from './NavBar.module.css'
 
 const NavBar = ({ user, handleLogout, closeMobileMenu, isMobile }) => {
 
@@ -12,8 +13,7 @@ const NavBar = ({ user, handleLogout, closeMobileMenu, isMobile }) => {
       {user
         ?  isMobile ?
         <ul>
-          <Link to="/" onClick={() => isMobile && closeMobileMenu()}><li 
-          >Home</li></Link>
+          <Link to="/" onClick={() => isMobile && closeMobileMenu()}><li>Home</li></Link>
           <Link to="/profiles" onClick={() => isMobile && closeMobileMenu()}><li>Profiles</li></Link>
           <Link to="/diarybooks" onClick={() => isMobile && closeMobileMenu()}><li>Diarybooks</li></Link>
           <Link to="/diarybooks/new" onClick={() => isMobile && closeMobileMenu()}><li>New Diarybook</li></Link>
@@ -24,7 +24,7 @@ const NavBar = ({ user, handleLogout, closeMobileMenu, isMobile }) => {
         </ul>
         :
         <ul>
-          <Link to="/"><li>Home</li></Link>
+          <Link to="/"><img src='logo.png' alt='larger_logo' id={styles.logo} /></Link>
           <Link to="/profiles"><li>Profiles</li></Link>
           <Link to="/diarybooks"><li>Diarybooks</li></Link>
           <Link to="/diarybooks/new"><li>New Diarybook</li></Link>
