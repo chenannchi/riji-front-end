@@ -35,7 +35,7 @@ const NavBar = ({ user, handleLogout, closeMobileMenu, isMobile }) => {
         </ul>
       :
         <ul>
-          <Link to="/"><li>Home</li></Link>
+          <Link to="/"><img src='logo.png' alt='larger_logo' id={styles.logo} /></Link>
           <Link to="/login" onClick={() => isMobile && closeMobileMenu()}><li>Log In</li></Link>
           <Link to="/signup" onClick={() => isMobile && closeMobileMenu()}><li>Sign Up</li></Link>
         </ul>
