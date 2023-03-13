@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import Loading from "../Loading/Loading"
+// import Loading from "../Loading/Loading"
 import styles from './NewDiarybook.module.css'
 // import Loading from "../Loading/Loading.jsx"
 

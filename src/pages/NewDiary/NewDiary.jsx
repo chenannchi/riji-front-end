@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import styles from './NewDiary.module.css'
-import Loading from "../Loading/Loading"
+// import Loading from "../Loading/Loading"
 
 const NewDiary = (props) => {
   const [form, setForm] = useState({
