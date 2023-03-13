@@ -24,7 +24,7 @@ const NavBar = ({ user, handleLogout, closeMobileMenu, isMobile }) => {
         </ul>
         :
         <ul>
-          <Link to="/"><img src='logo.png' alt='larger_logo' id={styles.logo} /></Link>
+          <Link to="/" className={styles.home}><img src='logo.png' alt='logo' id={styles.logo} /></Link>
           <Link to="/profiles"><li>Profiles</li></Link>
           <Link to="/diarybooks"><li>Diarybooks</li></Link>
           <Link to="/diarybooks/new"><li>New Diarybook</li></Link>
@@ -35,7 +35,7 @@ const NavBar = ({ user, handleLogout, closeMobileMenu, isMobile }) => {
         </ul>
       :
         <ul>
-          <Link to="/"><img src='logo.png' alt='larger_logo' id={styles.logo} /></Link>
+          <Link to="/" className={styles.home}><img src='logo.png' alt='logo' id={styles.logo} /></Link>
           <Link to="/login" onClick={() => isMobile && closeMobileMenu()}><li>Log In</li></Link>
           <Link to="/signup" onClick={() => isMobile && closeMobileMenu()}><li>Sign Up</li></Link>
         </ul>

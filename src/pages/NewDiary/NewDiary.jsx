@@ -25,7 +25,7 @@ const NewDiary = (props) => {
     setNewDiaryImg(Math.floor(Math.random()*(diaryIds.length)))    
   }, [props.user])
 
-  if (!newDiaryImg) return <Loading /> 
+  // if (!newDiaryImg) return <Loading /> 
 
   return (
     <main className={styles.container}>

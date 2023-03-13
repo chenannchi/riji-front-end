@@ -32,6 +32,11 @@ ul {
   display: none;
 }
 
+.home{
+  position: absolute;
+  left: 2%;
+}
+
 #logo{
   height: 6vh;
   /* position: absolute;
