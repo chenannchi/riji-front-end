@@ -9,7 +9,7 @@ const NewDiary = (props) => {
     music: '',
   })
 
-  const [newDiaryImg, setNewDiaryImg] = useState()
+  const [newDiaryImg, setNewDiaryImg] = useState(null)
 
   const handleChange = ({ target }) => {
     setForm({ ...form, [target.name]: target.value })
@@ -63,7 +63,9 @@ const NewDiary = (props) => {
           </input>
           <button type="submit">SUBMIT</button>
         </form>
-        <img src={`../../Images/DiaryImg/${newDiaryImg}.webp`} alt="new-diary" />
+        {
+          <img src={`../../Images/DiaryImg/${newDiaryImg}.webp`} alt="new-diary" />
+        }
       </div>
     </main>
   )

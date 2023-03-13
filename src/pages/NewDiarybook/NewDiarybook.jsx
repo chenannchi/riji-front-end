@@ -9,7 +9,8 @@ const NewDiarybook = (props) => {
     description: ''
   })
 
-  const [newDiaryImg, setNewDiaryImg] = useState()
+  const [newDiaryImg, setNewDiaryImg] = useState(null)
+  // const [loaded, setLoaded] = useState(false)
 
   const handleChange = ({ target }) => {
     setForm({ ...form, [target.name]: target.value })
@@ -22,15 +23,16 @@ const NewDiarybook = (props) => {
 
   useEffect(() => {
     const diaryIds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-    setNewDiaryImg(Math.floor(Math.random()*(diaryIds.length)))    
+    setNewDiaryImg(Math.floor(Math.random() * (diaryIds.length)))
   }, [props.user])
 
-  if (!newDiaryImg) return <Loading /> 
+  // if (!loaded) return <Loading /> 
 
   return (
+    // loaded?
     <main className={styles.container}>
       <div className={styles.form_section}>
-        <img src={`../../Images/DiaryImg/${newDiaryImg}.webp`} alt="new-diary" />
+        <img src={`../../Images/DiaryImg/${newDiaryImg}.webp`} alt="new-diary"/>
         <form onSubmit={handleSubmit}>
           <h1>New Diarybook</h1>
           <label htmlFor="name-input">Name</label>
@@ -57,6 +59,9 @@ const NewDiarybook = (props) => {
         </form>
       </div>
     </main>
+    // :
+    // <Loading />
+
   )
 }
 
