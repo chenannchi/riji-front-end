@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import styles from './NewDiary.module.css'
+import Loading from "../Loading/Loading"
 
 const NewDiary = (props) => {
   const [form, setForm] = useState({
@@ -7,6 +8,8 @@ const NewDiary = (props) => {
     content: '',
     music: '',
   })
+
+  const [newDiaryImg, setNewDiaryImg] = useState()
 
   const handleChange = ({ target }) => {
     setForm({ ...form, [target.name]: target.value })
@@ -17,40 +20,51 @@ const NewDiary = (props) => {
 		props.handleAddDiary(form)
   }
 
+  useEffect(() => {
+    const diaryIds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    setNewDiaryImg(Math.floor(Math.random()*(diaryIds.length)))    
+  }, [props.user])
+
+  if (!newDiaryImg) return <Loading /> 
+
   return (
     <main className={styles.container}>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title-input">Title</label>
-        <input
-          required
-          type="text"
-          name="title"
-          id="title-input"
-          value={form.title}
-          placeholder="Title"
-          onChange={handleChange}
-        />
-        <label htmlFor="content-input">Content</label>
-				<textarea
-          required
-          type="text"
-          name="content"
-          id="content-input"
-          value={form.content}
-          placeholder="Text"
-          onChange={handleChange}
-        />
-        <label htmlFor="music-input">Music</label>
-        <input
-          required
-          name="music"
-          id="music-input"
-          value={form.music}
-          onChange={handleChange}
-        >
-        </input>
-        <button type="submit">SUBMIT</button>
-      </form>
+      <div className={styles.form_section}>
+
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="title-input">Title</label>
+          <input
+            required
+            type="text"
+            name="title"
+            id="title-input"
+            value={form.title}
+            placeholder="Title"
+            onChange={handleChange}
+          />
+          <label htmlFor="content-input">Content</label>
+          <textarea
+            required
+            type="text"
+            name="content"
+            id="content-input"
+            value={form.content}
+            placeholder="Text"
+            onChange={handleChange}
+          />
+          <label htmlFor="music-input">Music</label>
+          <input
+            required
+            name="music"
+            id="music-input"
+            value={form.music}
+            onChange={handleChange}
+          >
+          </input>
+          <button type="submit">SUBMIT</button>
+        </form>
+        <img src={`../../Images/DiaryImg/${newDiaryImg}.webp`} alt="new-diary" />
+      </div>
     </main>
   )
 }

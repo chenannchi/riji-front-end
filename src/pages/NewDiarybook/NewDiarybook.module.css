@@ -39,6 +39,7 @@
 
 .form_section > img {
   /* border-radius: 10px; */
+  width: 30vw;
   height: 100%;
 }
 
