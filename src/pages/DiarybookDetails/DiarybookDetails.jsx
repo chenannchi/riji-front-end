@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import styles from './DiarybookDetails.module.css'
+import DiaryCard from "../../components/DiaryCard/DiaryCard"
 
 // Services
 import * as diarybookService from '../../services/diarybookService'
@@ -30,34 +31,34 @@ const DiarybookDetails = (props) => {
       {/* <article> */}
       <header>
         <h1>{diarybook.name}</h1>
-        <div>
+        <div className={styles.btns}>
           {diarybook.owner.filter(member => member._id === props.user.profile) &&
-            <>
+            <div>
               <Link to={`/diarybooks/${id}/edit`} state={diarybook}>Edit</Link>
-              <button onClick={() => props.handleDeleteDiarybook(id)}>Delete</button>
-            </>
+              <div onClick={() => props.handleDeleteDiarybook(id)}>Delete</div>
+            </div>
           }
         </div>
+        <div id={styles.owner}>
+          <div>Owned by</div>
+          {diarybook.owner.map(member => (
+            <div key={member._id}>
+              <div>{member.name}</div>
+              {member !== diarybook.owner[diarybook.owner.length - 1] ? <span>,</span> : null}
+            </div>
+          ))}
+        </div>
+        
       </header>
 
-      <div id={styles.owner}>
-        <div>Owned by</div>
-        {diarybook.owner.map(member => (
-          <div key={member._id}>
-            <div>{member.name}</div>
-              {member !== diarybook.owner[diarybook.owner.length - 1] ?<span>,</span> : null}
-          </div>
-        ))}
-      </div>
-      {/* {console.log(diarybook.owner.length)} */}
 
       <p>{diarybook.description}</p>
-      {/* </article> */}
       <section>
         <h1>Diaries</h1>
         <div className={styles.diaryContainer}>
           {diarybook.diaries.map(diary => (
-            <Link to={`/diarybooks/${id}/diaries/${diary._id}`} key={diary._id}>{diary.title}</Link>
+            // <Link to={`/diarybooks/${id}/diaries/${diary._id}`} key={diary._id}>{diary.title}</Link>
+            <DiaryCard key={diary._id} diary={diary} />
           ))}
         </div>
       </section>

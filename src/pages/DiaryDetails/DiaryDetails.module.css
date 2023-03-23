@@ -1,7 +1,7 @@
 .container {
   height: 100%;
   display: flex;
-  overflow: scroll;
+  /* overflow: scroll; */
   align-items: center;
   flex-direction: column;
   background-color: var(--card-background);
