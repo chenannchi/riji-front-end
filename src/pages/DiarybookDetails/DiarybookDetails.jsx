@@ -30,25 +30,23 @@ const DiarybookDetails = (props) => {
       {/* <article> */}
       <header>
         <h1>{diarybook.name}</h1>
-        <span>
-          {/* {console.log("owner",diarybook.owner)}
-          {console.log("user", props.user.profile)}
-          {console.log(diarybook.owner.includes(props.user.profile))} */}
+        <div>
           {diarybook.owner.filter(member => member._id === props.user.profile) &&
             <>
               <Link to={`/diarybooks/${id}/edit`} state={diarybook}>Edit</Link>
               <button onClick={() => props.handleDeleteDiarybook(id)}>Delete</button>
             </>
           }
-        </span>
+        </div>
       </header>
 
-      <div>Owned by
+      <div id={styles.owner}>
+        <div>Owned by</div>
         {diarybook.owner.map(member => (
-          <span key={member._id}>
-            {member.name}
-            {member !== diarybook.owner[diarybook.owner.length - 1] ? <span>,</span> : <span></span>}
-          </span>
+          <div key={member._id}>
+            <div>{member.name}</div>
+              {member !== diarybook.owner[diarybook.owner.length - 1] ?<span>,</span> : null}
+          </div>
         ))}
       </div>
       {/* {console.log(diarybook.owner.length)} */}
@@ -57,9 +55,11 @@ const DiarybookDetails = (props) => {
       {/* </article> */}
       <section>
         <h1>Diaries</h1>
-        {diarybook.diaries.map(diary => (
-          <Link to={`/diarybooks/${id}/diaries/${diary._id}`} key={diary._id}>{diary.title}</Link>
-        ))}
+        <div className={styles.diaryContainer}>
+          {diarybook.diaries.map(diary => (
+            <Link to={`/diarybooks/${id}/diaries/${diary._id}`} key={diary._id}>{diary.title}</Link>
+          ))}
+        </div>
       </section>
     </main>
   )
