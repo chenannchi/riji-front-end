@@ -75,6 +75,8 @@ ul {
   ul li:hover {
     background-color: rgb(190, 140, 64);
     color: white;
+    text-decoration: underline;
+
   }
 
   ul li a:hover {
@@ -97,15 +99,17 @@ ul {
   ul li {
     display: flex;
     margin-top: 15px;
-    padding: 0 30px;
+    padding: 10px 30px;
     color: white;
+    /* padding: 2% 0; */
     /* margin: 0, 40px; */
   }
 
   ul li:hover {
     font-weight: bolder;
     text-shadow: none;
-    border-bottom: white 2px solid;
+    text-decoration: underline 2px;
+    /* border-bottom: white 2px solid; */
     transition: all 0.1s ease-out;
   }
 
