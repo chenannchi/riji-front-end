@@ -6,7 +6,10 @@ const DiarybookList = (props) => {
   return (
     <main className={styles.container}>
       {props.diarybooks.map((diarybook) => (
-        <DiarybookCard key={diarybook._id} diarybook={diarybook} />
+        // console.log(props.user.profile)
+        diarybook.owner.includes(props.user.profile) ?
+          <DiarybookCard key={diarybook._id} diarybook={diarybook} />
+          : null
       ))}
     </main>
   )

@@ -152,7 +152,7 @@ const App = () => {
           path="/diarybooks"
           element={
             <ProtectedRoute user={user}>
-              <DiarybookList diarybooks={diarybooks} />
+              <DiarybookList user={user} diarybooks={diarybooks} />
             </ProtectedRoute>
           }
         />
@@ -181,7 +181,7 @@ const App = () => {
           path="/diaries"
           element={
             <ProtectedRoute user={user}>
-              <DiaryList diaries={diaries} />
+              <DiaryList diaries={diaries} user={user} />
             </ProtectedRoute>
           }
         />

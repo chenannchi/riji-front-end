@@ -8,7 +8,9 @@ const DiaryList = (props) => {
       <div>Search Bar</div>
       <div className={styles.container}>
         {props.diaries.map((diary) => (
+          diary.author._id === props.user.profile?
           <DiaryCard key={diary._id} diary={diary} />
+          :null
         ))}
       </div>
     </main>
