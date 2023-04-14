@@ -31,9 +31,9 @@ const DiarybookDetails = (props) => {
     <main className={styles.pageContainer}>
       <div className={styles.container}>
         <div id={styles.left} className={styles.area}>
-          <div>
+          <div id={styles.info}>
             <div id={styles.name}>
-              <h2>{diarybook.name}</h2>
+              <div>{diarybook.name}</div>
               <div className={styles.btns}>
                 {diarybook.owner.filter(member => member._id === props.user.profile) &&
                   <div>
@@ -56,7 +56,8 @@ const DiarybookDetails = (props) => {
           </div>
           
           <section>
-            <h2>Diaries</h2>
+            <div>Diaries</div>
+            <div>Search Bar</div>
             <div className={styles.diaryContainer}>
               {
                 diarybook.diaries.length ?

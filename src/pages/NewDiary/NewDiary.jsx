@@ -3,8 +3,13 @@ import styles from './NewDiary.module.css'
 // import Loading from "../Loading/Loading"
 
 const NewDiary = (props) => {
+  let todayDate = new Date().toLocaleDateString()
+
+
+  console.log(todayDate)
+
   const [form, setForm] = useState({
-    title: '',
+    title: todayDate,
     content: '',
     music: '',
   })
@@ -41,6 +46,7 @@ const NewDiary = (props) => {
             value={form.title}
             placeholder="Title"
             onChange={handleChange}
+            // defaultValue={todayDate}
           />
           <label htmlFor="content-input">Content</label>
           <textarea
@@ -54,7 +60,7 @@ const NewDiary = (props) => {
           />
           <label htmlFor="music-input">Music</label>
           <input
-            required
+            // required
             name="music"
             id="music-input"
             value={form.music}
