@@ -85,7 +85,7 @@ const DiaryDetails = (props) => {
             }
           </span>
         </header>
-        <p>{diary.content}</p>
+        <textarea>{diary.content}</textarea>
         {diary.music?
         <iframe src={modifyMusicLink(diary.music)} title={diary.title} width="420" height="315"></iframe>
         :
