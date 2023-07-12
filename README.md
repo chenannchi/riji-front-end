@@ -1,5 +1,6 @@
 # Riji
 ## Description 
+A reinterpretation of exchange diary. It helps users record and share their lives with their loved ones. Built with React, MongoDB.
 
 ## Getting Started
 
